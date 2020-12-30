@@ -1,15 +1,16 @@
 # Imports
 import tkinter as tk
 from tkinter import filedialog
+import os
 
 window = tk.Tk()
 window.geometry("500x200")
 window.title('Nightcoreify')
-title = tk.Label(text="Pitch a pitch and insert a WAV file.", )
+title = tk.Label(text="Insert a WAV file.")
 title.pack()
 
 def filePick():
-    file = filedialog.askopenfile(parent=window,mode='rb',title='Choose a file')
+    file = filedialog.askopenfile(parent=window,mode='rb',title='Choose a WAV file', filetypes=[("WAV File", "*.wav")])
     if file:
         data = file.read()
         file.close()
@@ -17,7 +18,7 @@ def filePick():
 
 button = tk.Button(
     command=filePick,
-    text="Click me!",
+    text="Click me to pick!",
     width=400,
     height=200,
     bg="green",
