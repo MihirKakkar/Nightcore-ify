@@ -5,6 +5,7 @@ import os
 import wave
 import numpy as np
 
+# GUI creation
 window = tk.Tk()
 window.geometry("500x200")
 window.title('Nightcoreify')
@@ -12,6 +13,7 @@ title = tk.Label(text="Insert a WAV file.")
 title.pack()
 
 def filePick():
+    # Limit to just WAV files
     file = filedialog.askopenfile(parent=window, mode='rb', title='Choose a WAV file', filetypes=[("WAV File", "*.wav")])
     if file:
         dataw = file.read()
@@ -35,6 +37,7 @@ def filePick():
         sz = wr.getframerate()//fr  
         c = int(wr.getnframes()/sz)  
         pitchshift = 200//fr  
+
         for i in range(c):
 
             # Split data into left and right channel
@@ -54,6 +57,7 @@ def filePick():
             ww.writeframes(ns.tobytes())
         wr.close()
         ww.close()
+        os.startfile('nightcoreVersion.wav')
 
 button = tk.Button(
     command=filePick,
@@ -63,6 +67,8 @@ button = tk.Button(
     bg="green",
     fg="black",
 )
+
 button.pack()
 window.mainloop()
+
 
