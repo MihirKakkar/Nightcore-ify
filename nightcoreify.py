@@ -1,16 +1,10 @@
 #Imports
 import wave
 import numpy as np
-import tkinter as tk
+from menu import *
 
-def pitchMenu():
-    optionList = ('Low', 'Medium', 'High')
-    self.v = tk.StringVar()
-    self.v.set(optionList[0])
-    self.om = tk.OptionMenu(self, self.v, *optionList)
-    return finalPitch
+def changeAudioSample():
 
-def changeAudioSample(finalPitch):
     # Collect Audio Sample
     wr = wave.open('Data\papercut.wav', 'r')
     par = list(wr.getparams())
@@ -51,5 +45,5 @@ def changeAudioSample(finalPitch):
     wr.close()
     ww.close()
 
-
 changeAudioSample()
+
