@@ -1,5 +1,6 @@
 # Nightcoreify
- Increase the pitch and speed of any WAV file!
+ Based on the popular Nightcore music trend, this python program increases the pitch and speed of any WAV file!
+ 
  To run: 
-  - Clone repo
-  - Execute nightcorify.py
+  - git clone https://github.com/MihirKakkar/Nightcoreify.git
+  - python nightcorify.py
